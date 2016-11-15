@@ -4,7 +4,7 @@
    <extension
          point="org.eclipse.ui.commands">
       <command
-            defaultHandler="testwizard.SampleWizardHandler"
+            defaultHandler="handlers.NewModelCreationWizardHandler"
             id="TestWizard.command1"
             name="Test Wizad">
       </command>

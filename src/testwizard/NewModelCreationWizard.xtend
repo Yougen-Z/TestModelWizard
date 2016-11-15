@@ -17,7 +17,7 @@ class NewModelCreationWizard extends NewArtifactCreationWizard {
 	}
 
 	override protected doDispose() {
-		// Your code comes here
+		
 	}
 
 	override protected doCanFinish() {
