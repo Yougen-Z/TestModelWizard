@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            defaultHandler="testwizard.SampleWizardHandler"
+            id="TestWizard.command1"
+            name="Test Wizad">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="toolbar:org.eclipse.ui.main.toolbar?after=additions">
+         <toolbar
+               id="TestWizard.toolbar1">
+            <command
+                  commandId="TestWizard.command1"
+                  label="Test Wizard"
+                  style="push">
+            </command>
+         </toolbar>
+      </menuContribution>
+   </extension>
+
+</plugin>
