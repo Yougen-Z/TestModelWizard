@@ -54,13 +54,13 @@ import org.eclipse.xtend.lib.annotations.Accessors
     def private void addOpenInEditorCheckbox(Composite parent) {
     	val childComposite = parent.addChildComposite(SWT::NULL)    	
 		childComposite.layout = newGridLayout()
-		
-	   	openInEditorChkBox = childComposite.addButton("Open the artifact in editor", SWT::CHECK)
-	    openInEditorChkBox.layoutData = newGridData() => [
+		childComposite.layoutData = newGridData() => [
     		horizontalAlignment = GridData::FILL_HORIZONTAL
     		verticalAlignment = GridData::BEGINNING
     		horizontalSpan = 2
     	]
+		
+	   	openInEditorChkBox = childComposite.addButton("Open the artifact in editor", SWT::CHECK)
 	    openInEditorChkBox.selection = true
     }
 	
@@ -78,6 +78,10 @@ import org.eclipse.xtend.lib.annotations.Accessors
 	
 	protected def void addCustomControl(Composite parent)
 	
-	protected def void validate()
+	override isPageComplete() {
+		validate()
+	}
+	
+	protected def boolean validate()
 	
 }

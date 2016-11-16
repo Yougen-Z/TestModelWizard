@@ -71,7 +71,7 @@ class NewModelCreationWizardPage extends NewArtifactCreationWizardPage {
     }
 				
 	override protected validate() {
-		pageComplete = true
+		true
 	}
 
 }
