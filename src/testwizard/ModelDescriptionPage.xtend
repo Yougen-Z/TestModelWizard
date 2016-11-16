@@ -9,7 +9,7 @@ import static extension com.lib.SWTExtensions.SWTWidgetExtensions.*
 import static extension com.lib.SWTExtensions.SWTLayoutExtensions.*
 
 class ModelDescriptionPage extends WizardPage {
-	Text wizardDesciption
+	private Text wizardDesciption
 	
 	protected new() {
 		super("Description Page", "Description Page", null)
@@ -24,35 +24,27 @@ class ModelDescriptionPage extends WizardPage {
 	}
 	
 	override createControl(Composite parent) {
-		
-		control = parent.addChildComposite => [
-			layout = newGridLayout => [
-                numColumns = 2
-                makeColumnsEqualWidth = false
-            ]
-			addArtifactDescriptionControl
-		]
+				
+		val childComposite = parent.addChildComposite()
+		childComposite.layout = newGridLayout(2, false)
+		childComposite.addArtifactDescriptionControl()
+		control = childComposite
 		pageComplete = true
 	}
 	
 	def protected void addArtifactDescriptionControl(Composite parent) {
-        parent.addLabel("Description:", SWT.NULL) => [ 
-            layoutData = newGridData => [
-                horizontalAlignment = GridData.BEGINNING
-                verticalAlignment = GridData.BEGINNING
-            ]
+		
+        val label = parent.addLabel("Description:", SWT.NULL)
+        label.layoutData = newGridData() => [
+            horizontalAlignment = GridData.BEGINNING
+            verticalAlignment = GridData.BEGINNING
         ]
         
-        wizardDesciption = parent.addText(SWT::BORDER.bitwiseOr(SWT::MULTI)) => [
-            layoutData = newGridData => [
-                horizontalAlignment = GridData.FILL
-                verticalAlignment = GridData.FILL
-                grabExcessHorizontalSpace = true
-                grabExcessVerticalSpace = true
-                horizontalSpan = 1
-                verticalSpan = 1
-                minimumHeight = 50
-            ]
+        wizardDesciption = parent.addText(SWT::BORDER.bitwiseOr(SWT::MULTI))
+        wizardDesciption.layoutData = newDefaultGridData() => [
+            horizontalSpan = 1
+            verticalSpan = 1
+            minimumHeight = 50
         ]
     }
 	

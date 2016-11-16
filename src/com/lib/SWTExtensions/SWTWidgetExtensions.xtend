@@ -36,6 +36,12 @@ class SWTWidgetExtensions {
 		new Button(parent, style)
 	}
 	
+	def static addButton(Composite parent, String text, int style) {
+		new Button(parent, style) => [
+			it.text = text
+		]
+	}
+	
 	def static addStyledText(Composite parent, int style) {
 		new StyledText(parent, style)
 	}
