@@ -71,7 +71,7 @@ class NewModelCreationWizardPage extends NewArtifactCreationWizardPage {
     }
 				
 	override protected validate() {
-		true
+		pageComplete = artifactName.text.length >= 3
 	}
 
 }

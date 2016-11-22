@@ -32,6 +32,10 @@ class SWTWidgetExtensions {
 		new Text(parent, style)
 	}
 	
+	def static addDefaultText(Composite parent) {
+		new Text(parent, SWT::BORDER.bitwiseOr(SWT::SINGLE))
+	}
+	
 	def static addButton(Composite parent, int style) {
 		new Button(parent, style)
 	}

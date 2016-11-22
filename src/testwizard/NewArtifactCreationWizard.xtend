@@ -3,8 +3,9 @@ package testwizard
 import java.util.List
 import org.eclipse.jface.wizard.Wizard
 import org.eclipse.jface.wizard.WizardPage
+import org.eclipse.ui.INewWizard
 
-abstract class NewArtifactCreationWizard extends Wizard {
+abstract class NewArtifactCreationWizard extends Wizard implements INewWizard {
 
 	override addPages() {
 		wizardPages.forEach[addPage(newInstance)]
