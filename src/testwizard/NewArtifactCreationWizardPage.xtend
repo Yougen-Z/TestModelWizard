@@ -13,7 +13,7 @@ import org.eclipse.xtend.lib.annotations.Accessors
 import org.eclipse.swt.events.ModifyEvent
 import org.eclipse.swt.events.ModifyListener
 
-@Accessors(PROTECTED_GETTER) abstract class NewArtifactCreationWizardPage extends WizardPage {
+@Accessors(PUBLIC_GETTER) abstract class NewArtifactCreationWizardPage extends WizardPage {
 	private int parentNumColumns = 2 // Number of column in parent Composite
 	private Text artifactName
 	private Text namespace
