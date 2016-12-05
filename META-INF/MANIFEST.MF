@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: TestWizard
-Bundle-SymbolicName: TestWizard;singleton:=true
+Bundle-SymbolicName: TestModelWizard;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: testwizard.Activator
 Require-Bundle: org.eclipse.ui,
